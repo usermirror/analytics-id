@@ -40,9 +40,11 @@ yarn add analytics-id
 ```javascript
 import analyticsId from 'analytics-id'
 
-analyticsId() // generate or pull id from cookie/localStorage
+// generate or pull id from cookie/localStorage
+analyticsId()
 
-analyticsId('exampleId') // call the function with string or number to set as id, otherwise pass in options
+// call the function with string or number to set as id, otherwise pass in options
+analyticsId('exampleId')
 ```
 
 ### Usage
