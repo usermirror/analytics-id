@@ -4,7 +4,7 @@ const { get: storeGetters } = require('./stores')
 const set = require('./set')
 
 module.exports = function get(opts = {}) {
-  let { debug, preset = 'segment', env = '', cookie, localStorage } = opts
+  let { debug, preset = 'segment', env = '', cookie, localStorage, prefix } = opts
   let log = Log({ debug })
 
   if (!presets[preset]) {
@@ -47,7 +47,7 @@ module.exports = function get(opts = {}) {
     // check for req
   }
 
-  const newId = generateId()
+  const newId = generateId({ prefix })
 
   if (persist) {
     log(`get: persisting new id {id: "${newId}"}`)

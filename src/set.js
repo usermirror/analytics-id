@@ -3,7 +3,7 @@ const presets = require('./utils/presets')
 const { set: storeSetters } = require('./stores')
 
 module.exports = function set(opts = {}) {
-  let { id, debug, preset = 'segment', cookie, localStorage, domain } = opts
+  let { id, debug, preset = 'segment', cookie, localStorage, domain, prefix } = opts
   let log = Log({ debug })
 
   if (!presets[preset]) {
@@ -14,7 +14,7 @@ module.exports = function set(opts = {}) {
   const { generateId, key, stores, mutate } = presets[preset]
 
   if (!id) {
-    id = generateId()
+    id = generateId({ prefix })
     log(`set: created new id {id: "${id}"}`)
   } else {
     log(`set: using {id: "${id}"}`)
