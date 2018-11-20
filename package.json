@@ -1,6 +1,6 @@
 {
   "name": "analytics-id",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "get and set analytics ids on the server and in the browser",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
