@@ -1,10 +1,17 @@
-const Log = require('./utils/log')
-const presets = require('./utils/presets')
-const { get: storeGetters } = require('./stores')
-const set = require('./set')
+import set from './set'
+import Log from './utils/log'
+import presets from './utils/presets'
+import { get as storeGetters } from './stores'
 
-module.exports = function get(opts = {}) {
-  let { debug, preset = 'segment', env = '', cookie, localStorage, prefix } = opts
+export function get(opts = {}) {
+  let {
+    debug,
+    preset = 'segment',
+    env = '',
+    cookie,
+    localStorage,
+    prefix
+  } = opts
   let log = Log({ debug })
 
   if (!presets[preset]) {
@@ -88,3 +95,5 @@ function getBrowserId({ debug, stores, key, cookie, localStorage }) {
 
   return ''
 }
+
+export default get

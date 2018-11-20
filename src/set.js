@@ -1,8 +1,8 @@
-const Log = require('./utils/log')
-const presets = require('./utils/presets')
-const { set: storeSetters } = require('./stores')
+import Log from './utils/log'
+import presets from './utils/presets'
+import { set as storeSetters } from './stores'
 
-module.exports = function set(opts = {}) {
+export function set(opts = {}) {
   let {
     id,
     debug,
@@ -92,3 +92,5 @@ function storeId(opts = {}) {
 
   return result
 }
+
+export default set

@@ -1,6 +1,6 @@
-const getAnalyticsId = require('./get')
-const setAnalyticsId = require('./set')
-const generateId = require('./utils/uuid-v4')
+import getAnalyticsId from './get'
+import setAnalyticsId from './set'
+import generateId from './utils/uuid-v4'
 
 function analyticsId(opts) {
   if (typeof opts === 'undefined') {
@@ -22,7 +22,12 @@ function analyticsId(opts) {
   }
 }
 
+const get = getAnalyticsId
+const set = setAnalyticsId
+
 analyticsId.get = getAnalyticsId
 analyticsId.set = setAnalyticsId
 
-module.exports = analyticsId
+export { get, set }
+
+export default analyticsId

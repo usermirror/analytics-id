@@ -1,6 +1,6 @@
-const uuid = require('./uuid-v4')
+import uuid from './uuid-v4'
 
-const segment = {
+export const segment = {
   mutate: true,
   persist: true,
   key: 'ajs_user_id',
@@ -8,6 +8,6 @@ const segment = {
   generateId: ({ prefix = 'ajs' }) => [prefix, uuid()].join('-')
 }
 
-module.exports = {
+export default {
   segment
 }

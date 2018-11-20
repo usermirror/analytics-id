@@ -1,6 +1,6 @@
 const test = require('ava')
-const id = require('../lib')
-const { get } = require('../lib')
+const id = require('../lib/analytics-id')
+const { get } = require('../lib/analytics-id')
 
 test(t => {
   t.truthy(id())

@@ -1,4 +1,4 @@
-function getAll(cookie = '') {
+export function getAll(cookie = '') {
   const cookieParts = cookie.split('; ')
   const cookies = {}
 
@@ -18,14 +18,14 @@ function getAll(cookie = '') {
   return cookies
 }
 
-function get(opts = {}) {
+export function get(opts = {}) {
   const { key, cookie } = opts
   const cookies = getAll(cookie)
 
   return cookies[key]
 }
 
-function browserSet({ name, value, expires, domain, path, secure }) {
+export function browserSet({ name, value, expires, domain, path, secure }) {
   let valueToUse
 
   if (value !== undefined && typeof value === 'object')
@@ -43,7 +43,7 @@ function browserSet({ name, value, expires, domain, path, secure }) {
     (secure ? '; secure' : '')
 }
 
-function set(opts = {}) {
+export function set(opts = {}) {
   const { key, id, mutate, domain } = opts
   let { cookie } = opts
   let isBrowser = false
@@ -69,7 +69,7 @@ function set(opts = {}) {
   return [cookie, newCookie].filter(Boolean).join('; ')
 }
 
-module.exports = {
+export default {
   get,
   set
 }

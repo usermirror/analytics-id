@@ -1,5 +1,5 @@
 const test = require('ava')
-const { set } = require('../lib')
+const { set } = require('../lib/analytics-id')
 
 test(t => {
   const { cookie, localStorage } = set({ id: 'a' })

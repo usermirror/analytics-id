@@ -1,13 +1,14 @@
-const cookie = require('./cookie')
-const localStorage = require('./local-storage')
+import cookie from './cookie'
+import localStorage from './local-storage'
 
-module.exports = {
-  get: {
-    cookie: cookie.get,
-    localStorage: localStorage.get
-  },
-  set: {
-    cookie: cookie.set,
-    localStorage: localStorage.set
-  }
+export const get = {
+  cookie: cookie.get,
+  localStorage: localStorage.get
 }
+
+export const set = {
+  cookie: cookie.set,
+  localStorage: localStorage.set
+}
+
+export default { get, set }

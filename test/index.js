@@ -1,5 +1,5 @@
 const test = require('ava')
-const analyticsId = require('../lib')
+const analyticsId = require('../lib/analytics-id')
 
 // test get
 test(t => {

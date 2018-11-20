@@ -4,7 +4,7 @@ for (let i = 0; i <= 15; i++) {
   dec2hex.push(i.toString(16))
 }
 
-function uuid() {
+export function v4() {
   let value = ''
 
   for (var i = 1; i <= 36; i++) {
@@ -22,4 +22,4 @@ function uuid() {
   return value
 }
 
-module.exports = uuid
+export default v4
