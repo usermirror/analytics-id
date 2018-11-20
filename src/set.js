@@ -3,7 +3,15 @@ const presets = require('./utils/presets')
 const { set: storeSetters } = require('./stores')
 
 module.exports = function set(opts = {}) {
-  let { id, debug, preset = 'segment', cookie, localStorage, domain, prefix } = opts
+  let {
+    id,
+    debug,
+    preset = 'segment',
+    cookie,
+    localStorage,
+    domain,
+    prefix
+  } = opts
   let log = Log({ debug })
 
   if (!presets[preset]) {
@@ -11,7 +19,10 @@ module.exports = function set(opts = {}) {
     preset = 'segment'
   }
 
-  const { generateId, key, stores, mutate } = presets[preset]
+  const { generateId, key, stores, mutate } = {
+    ...presets[preset],
+    ...opts // use options to override
+  }
 
   if (!id) {
     id = generateId({ prefix })

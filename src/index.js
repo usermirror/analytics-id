@@ -9,8 +9,10 @@ function analyticsId(opts) {
 
   if (typeof opts === 'string' || typeof opts === 'number') {
     return setAnalyticsId({ id: opts })
-  } else if (typeof opts === 'object') {
-    if (typeof opts.id !== 'undefined') {
+  }
+
+  if (typeof opts === 'object') {
+    if (typeof opts.id !== 'undefined' || typeof opts.prefix !== 'undefined') {
       return setAnalyticsId(opts)
     } else {
       return getAnalyticsId(opts)
