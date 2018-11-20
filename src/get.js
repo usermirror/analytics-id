@@ -19,7 +19,13 @@ export function get(opts = {}) {
     preset = 'segment'
   }
 
-  const { generateId, key, stores, persist } = presets[preset]
+  const { generateId, key, stores, persist } = Object.assign(
+    {},
+    {
+      ...presets[preset],
+      ...opts // use options to override
+    }
+  )
 
   if (isBrowser({ env })) {
     if (!localStorage) {
