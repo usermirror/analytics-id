@@ -19,10 +19,13 @@ module.exports = function set(opts = {}) {
     preset = 'segment'
   }
 
-  const { generateId, key, stores, mutate } = {
-    ...presets[preset],
-    ...opts // use options to override
-  }
+  const { generateId, key, stores, mutate } = Object.assign(
+    {},
+    {
+      ...presets[preset],
+      ...opts // use options to override
+    }
+  )
 
   if (!id) {
     id = generateId({ prefix })
