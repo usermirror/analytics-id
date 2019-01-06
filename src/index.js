@@ -27,7 +27,8 @@ const set = setAnalyticsId
 
 analyticsId.get = getAnalyticsId
 analyticsId.set = setAnalyticsId
+analyticsId.generate = generateId
 
-export { get, set }
+export { get, set, generateId }
 
 export default analyticsId

@@ -9,15 +9,14 @@
 <br/>
 
 <p align="center">
-  <a href="https://unpkg.com/analytics-id/dist/analytics-id.min.js">
-    <img src="https://img.badgesize.io/https://unpkg.com/analytics-id/dist/analytics-id.min.js?compression=gzip&amp;label=analytics--id&cache=2">
+  <a href="https://unpkg.com/analytics-id/lib/analytics-id.js">
+    <img src="https://img.badgesize.io/https://unpkg.com/analytics-id/lib/analytics-id.js?compression=gzip&amp;label=analytics--id&cache=2">
   </a>
   <a href="https://www.npmjs.com/package/analytics-id">
     <img src="https://img.shields.io/npm/v/analytics-id.svg?maxAge=3600&label=analytics-id&colorB=007ec6">
   </a>
 </p>
 <br/>
-
 
 ### Getting Started
 
